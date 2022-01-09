@@ -6,6 +6,7 @@ import DrawMenu from "./NavMenu";
 
 import './FrameSet.scss';
 import ShoppingListBasicBox from "./ShopListBasic";
+import BasicEditBox from "./BasicEditBox";
 
 export interface IShopListItem {
     name: string;
@@ -95,9 +96,9 @@ let test = "";
                 <div className="RightBody">
                     <Typography variant="h3">Right</Typography>
                     <Routes>
-                        <Route  path="/" element={<Typography variant="h3">{test}</Typography>}/>
-                        <Route key={test} path="/Edit" element={<Typography variant="h3">{test}</Typography>}/>
-                        <Route path="/About" element={<Typography variant="h3">About</Typography>}/>
+                        <Route  path="/" element={<BasicEditBox />}/>
+                        <Route  path="/Edit" element={<BasicEditBox />}/>
+                        <Route path="/About" element={<BasicEditBox />}/>
                     </Routes>
                 </div>
             </div>

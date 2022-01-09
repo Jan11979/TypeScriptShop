@@ -82,15 +82,13 @@ function ShoppingListBasicListCreateString( { count, text } : PropsShoppingListB
 function ShoppingListBasicUserList( { list } : ElementPropsShoppingListBox) {
     let navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
-    //const searchParams = useSearchParams();
     const location = useLocation();
-
     const listParam = searchParams.get('list')
     const idParam = searchParams.get('id')
 
 
 
-    console.log("ShoppingListBasicUserList" , listParam, idParam, location.search );
+    console.log("ShoppingListBasicUserList" , listParam, idParam );
 
 
     const [checked, setChecked] = React.useState([0]);
@@ -109,12 +107,7 @@ function ShoppingListBasicUserList( { list } : ElementPropsShoppingListBox) {
     //const handleEventEdit: React.MouseEventHandler<HTMLButtonElement> = (event: ) => {
         console.log("handleShopListElementEventAdd" , listID, myID);
         let navString="list="+listID+"&id="+myID;
-        //let navString="/Edit?list="+listID+"?id="+myID;
-        //navigate(navString, {replace: true});
-        navigate({
-            pathname: '/',
-            search: navString,
-        });
+        navigate({ pathname: location.pathname, search: navString, });
 
     }
 
