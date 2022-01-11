@@ -141,7 +141,7 @@ function BasicEditBox({listData, setterListe}: PropsBasicEditBox) {
     }
     function DrawKillButton({icon, text }: PropsDrawIconButton) {
         return (<IconButton aria-label={text} onClick={handleBasicEditBoxKill} > {icon} </IconButton>)
-    }
+    } 
 
 
     /**
