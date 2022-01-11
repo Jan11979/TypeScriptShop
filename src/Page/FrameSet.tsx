@@ -38,8 +38,8 @@ function CreateData(storageKey: string): IShopList {
         {name: "Bier2", count: 1}
     ];
     const listePerson: IPersonalShopList[] = [
-        {name: "Jan", id: 1, list: listeItem},
-        {name: "Peter", id: 2, list: listeItem2}
+        {name: "Jan", id: 0, list: listeItem},
+        {name: "Peter", id: 1, list: listeItem2}
     ];
     let tmpAllData: IShopList = {id: -1, name: "JanX", /*list: listeItem,*/ listP: listePerson};
     let stringAllData = JSON.stringify(tmpAllData);
@@ -52,7 +52,7 @@ function CreateData(storageKey: string): IShopList {
 }
 
 function DrawFrameSet() {
-    const STORAGE_KEY = 'MeinWirklichTollerKey123456789';
+    const STORAGE_KEY = '234234234234MeinWirklichTollerKey123456789';
     const [listeAllData, setListe] = useState(CreateData(STORAGE_KEY));
     useEffect(() => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(listeAllData));
@@ -60,7 +60,7 @@ function DrawFrameSet() {
     }, [listeAllData]);
 
     if (listeAllData.id === -1) {
-        listeAllData.id = 1;
+        listeAllData.id = 0;
         listeAllData.name = "Jan";
         let newAllData = {...listeAllData};
         setListe(newAllData);
@@ -93,12 +93,11 @@ let test = "";
                         <Route path="/About" element={<Typography variant="h3">Mitte</Typography>}/>
                     </Routes>
                 </div>
-                <div className="RightBody">
-                    <Typography variant="h3">Right</Typography>
+                <div className="RightBody">                    
                     <Routes>
-                        <Route  path="/" element={<BasicEditBox />}/>
-                        <Route  path="/Edit" element={<BasicEditBox />}/>
-                        <Route path="/About" element={<BasicEditBox />}/>
+                        <Route  path="/" element={<BasicEditBox  listData={listeAllData} setterListe={setListe} />}/>
+                        <Route  path="/Edit" element={<BasicEditBox  listData={listeAllData} setterListe={setListe} />}/>
+                        <Route path="/About" element={<BasicEditBox  listData={listeAllData} setterListe={setListe} />}/>
                     </Routes>
                 </div>
             </div>

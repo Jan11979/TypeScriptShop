@@ -106,7 +106,7 @@ function ShoppingListBasicUserList( { list } : ElementPropsShoppingListBox) {
     const handleEventEdit = ( listID: number, myID: number) => {
     //const handleEventEdit: React.MouseEventHandler<HTMLButtonElement> = (event: ) => {
         console.log("handleShopListElementEventAdd" , listID, myID);
-        let navString="list="+listID+"&id="+myID;
+        let navString="statleft=edit&list="+listID+"&id="+myID;
         navigate({ pathname: location.pathname, search: navString, });
 
     }
