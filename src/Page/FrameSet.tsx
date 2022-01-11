@@ -50,6 +50,18 @@ function CreateData(storageKey: string): IShopList {
 
     return tmpAllData;
 }
+//https://jpshoplist.herokuapp.com/sl/miau
+async function getAll(src: string) {
+    const response = await fetch(src);
+    /*    if (response.status != 200) {
+            alert("Achtung!!!\nStatus ist nicht 200!");
+            return 0;
+        }*/
+    const body = await response.text();//json();
+    const result = body;
+    console.log("Vom Server Miau :", result);
+    return result;
+}
 
 function DrawFrameSet() {
     const STORAGE_KEY = '234234234234MeinWirklichTollerKey123456789';
@@ -65,6 +77,15 @@ function DrawFrameSet() {
         let newAllData = {...listeAllData};
         setListe(newAllData);
     }
+
+    ////https://jpshoplist.herokuapp.com/sl/miau
+    //"https://rickandmortyapi.com/api/character/?name=rick&status=alive")
+    const [data, setData] = useState([]);
+//    useEffect(() => {
+        getAll("https://jpshoplist.herokuapp.com/sl/miau");
+        //    .then(data => console.log("Miau vom Server",data))
+        //    }, [])
+
 
     return (
         <div>
