@@ -80,7 +80,7 @@ function DrawFrameSet() {
 
     ////https://jpshoplist.herokuapp.com/sl/miau
     //"https://rickandmortyapi.com/api/character/?name=rick&status=alive")
-    const [data, setData] = useState([]);
+//    const [data, setData] = useState([]);
 //    useEffect(() => {
         getAll("https://jpshoplist.herokuapp.com/sl/miau");
         //    .then(data => console.log("Miau vom Server",data))
