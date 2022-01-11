@@ -65,7 +65,7 @@ function DrawFrameSet() {
         let newAllData = {...listeAllData};
         setListe(newAllData);
     }
-let test = "";
+
     return (
         <div>
             <div>

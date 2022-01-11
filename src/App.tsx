@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import DrawFrameSet from "./Page/FrameSet";
 
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+//const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function App() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');

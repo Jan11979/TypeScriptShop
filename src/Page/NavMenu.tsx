@@ -1,5 +1,5 @@
 import './NavMenu.scss';
-import {Link} from "react-router-dom";
+//import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -38,13 +38,13 @@ function DrawMenu() {
 //                                    navigate("/", {replace: true});
                                 }
                                     break;
-                                case 1: {
+                                case 1:
                                     navigate("/Edit", {replace: true});
-                                }
+
                                     break;
-                                case 2: {
+                                case 2:
                                     navigate("/About", {replace: true});
-                                }
+                                
                                     break;
                             }
                         }}

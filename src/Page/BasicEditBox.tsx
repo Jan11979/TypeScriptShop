@@ -22,7 +22,7 @@ interface PropsDrawIconButton {
     text: string,
     disabled?: boolean
 }
-
+/*
 //<IconButton aria-label={text}>
 function DrawIconButton({icon, text, disabled}: PropsDrawIconButton) {
     if (disabled) {
@@ -31,7 +31,7 @@ function DrawIconButton({icon, text, disabled}: PropsDrawIconButton) {
         return (<IconButton aria-label={text} > {icon} </IconButton>)
     }
 }
-
+*/
 
 interface PropsBasicEditBox {
     listData: IShopList,
@@ -40,7 +40,7 @@ interface PropsBasicEditBox {
 
 function BasicEditBox({listData, setterListe}: PropsBasicEditBox) {
     let navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams ] = useSearchParams();
     const location = useLocation();
     const paramListString = searchParams.get('list')
     const paramIDString = searchParams.get('id')

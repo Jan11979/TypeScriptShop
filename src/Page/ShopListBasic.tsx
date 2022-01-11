@@ -13,12 +13,12 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 
 import EditIcon from '@mui/icons-material/Edit';
-import SettingsIcon from '@mui/icons-material/Settings';
+//import SettingsIcon from '@mui/icons-material/Settings';
 //import CommentIcon from '@mui/icons-material/Comment';
 
 import {Typography} from "@mui/material";
 
-
+/*
 interface ElementProps {
     count: number,
     text: string
@@ -32,6 +32,7 @@ function Element({count, text}: ElementProps) {
         </div>
     )
 }
+*/
 
 /**
  * #Freitag
@@ -39,6 +40,7 @@ function Element({count, text}: ElementProps) {
 interface ElementPropsShoppingListBox {
     list: IPersonalShopList
 }
+/*
 function ShoppingListBox( { list } : ElementPropsShoppingListBox) {
     return (
         <div className="ShopListElementAll" >
@@ -47,6 +49,8 @@ function ShoppingListBox( { list } : ElementPropsShoppingListBox) {
         </div>
     )
 }
+*/
+
 
 interface PropsShoppingListBasicBox {
     list: IShopList
@@ -81,7 +85,7 @@ function ShoppingListBasicListCreateString( { count, text } : PropsShoppingListB
 }
 function ShoppingListBasicUserList( { list } : ElementPropsShoppingListBox) {
     let navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const location = useLocation();
     const listParam = searchParams.get('list')
     const idParam = searchParams.get('id')
